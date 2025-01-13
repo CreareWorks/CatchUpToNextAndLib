@@ -1,0 +1,105 @@
+.main {
+  position: relative;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #000000, #2a5298);
+  color: #fff;
+  overflow: hidden;
+}
+
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+    text-shadow: 
+    0 0 5px #00d5ff, 
+    0 0 10px #0008ff, 
+    0 0 20px #0088ff, 
+    0 0 40px #6bff92, 
+    0 0 80px #2c21f9;
+  }
+  20%, 24%, 55% {
+    opacity: 0.5;
+    text-shadow: 
+      0 0 5px #003169, 
+      0 0 10px #00158b, 
+      0 0 20px #004f8b;
+  }
+}
+
+@keyframes shake {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(2px, -2px); }
+  60% { transform: translate(-1px, 1px); }
+  80% { transform: translate(1px, -1px); }
+  100% { transform: translate(0, 0); }
+}
+
+.anime-text {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 
+    0 0 5px #0037ff, 
+    0 0 10px #0008ff, 
+    0 0 20px #0088ff, 
+    0 0 40px #008b6f, 
+    0 0 80px #07008b;
+  animation: flicker 2s infinite, shake 1s infinite;
+  letter-spacing: 2px;
+  position: relative;
+  top: 6rem;
+  display: inline-block;
+  margin: 50px;
+}
+
+.anime-text::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 2px;
+  height: 30px;
+  background: #007598;
+  transform: translateX(-50%);
+  animation: drip 1.5s infinite;
+}
+
+@keyframes drip {
+  0%, 90% {
+    height: 0;
+    opacity: 0;
+  }
+  95% {
+    height: 15px;
+    opacity: 0.7;
+  }
+  100% {
+    height: 30px;
+    opacity: 0;
+  }
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+// mobile
+@media (max-width: 768px) {
+  .anime-text {
+    font-size: 2.5rem;
+  }
+}
+
+.canvas {
+  width: 100%;
+  height: 1920px;
+}

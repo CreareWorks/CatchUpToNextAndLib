@@ -19,6 +19,8 @@
 - "drizzle-kit": "^0.30.1"
 - "drizzle-orm": "^0.38.3"
   - postgresへのDB処理に採用
+- Babylon.js
+  - 3Dモデルの生成
 
 ## Server Actions
   - DBへの通信(CREATE, UPDATE, DELETE系)が発生するような処理をまとめた関数を呼びだすような処理を記述
