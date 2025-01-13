@@ -1,0 +1,85 @@
+/* font指定 */
+@font-face {
+  font-family: "HomuraM";
+  src: url("/fonts/homura/05HomuraM-SemiBold.otf") format("opentype");
+}
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 0, 0, 0;
+}
+
+/* Eric Meyer’s Reset CSS v2.0 - http://meyerweb.com/eric/tools/css/reset/ */
+/* License: Public Domain */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: "HomuraM", sans-serif;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, nav, section,
+summary {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+blockquote::before, blockquote::after,
+q::before, q::after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}≈
+
+canvas:focus {
+  outline: none;
+}
+
+canvas:focus-visible {
+  outline: none;
+}
+
+/* リンクの基本スタイル */
+a {
+  text-decoration: none;     /* 下線を消す */
+}
+
+/* ホバー時やフォーカス時、アクティブ時も下線を出したくない場合 */
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  /* もしホバー時の色を変えたいならここで指定 */
+}
+
+/* 既訪問リンク (visited) の色も統一したい場合 */
+a:visited {
+  color: #fff;               /* 既訪問でも同じ色に */
+  text-decoration: none;
+}

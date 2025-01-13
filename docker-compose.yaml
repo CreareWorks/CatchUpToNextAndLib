@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:15
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: practicedb
+    volumes:
+      - fe_practice_db_data:/var/lib/postgresql/data
+      # - ./docker/db:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
+
+volumes:
+  fe_practice_db_data:

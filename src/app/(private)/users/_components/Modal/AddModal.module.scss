@@ -1,0 +1,104 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); // 半透明の背景
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modalContent {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 90%; // モバイル対応
+  padding: 20px;
+  animation: fadeIn 0.3s ease-in-out;
+  color: #003670; // テキストに既存の色を合わせる
+}
+
+.header {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  text-align: center;
+  color: #003670; // 見出しの色を合わせる
+}
+
+.buttonWrap {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.cancelButton {
+  border: none;
+  background-color: transparent;
+  color: #919191;
+  cursor: pointer;
+  font-size: 14px;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #616161; // ホバー時の色変更
+  }
+}
+
+.okButton {
+  border: none;
+  background-color: transparent;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 14px;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #0056b3; // ホバー時の色変更
+  }
+
+  &:disabled {
+    color: #cccccc; // 無効時の色
+    cursor: not-allowed;
+  }
+}
+
+.input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #003670; // テキスト色を既存の色に合わせる
+  margin-top: 5px;
+  margin-bottom: 10px;
+
+  &:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+  }
+}
+
+/* モーダルのフェードインアニメーション */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+// @todo 後で共通させる
+.error {
+  color: #dc3545; // エラーメッセージの色
+  font-size: 14px;
+  margin-top: 5px;
+}
