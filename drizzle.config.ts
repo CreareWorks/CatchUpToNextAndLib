@@ -2,7 +2,7 @@ import { defineConfig } from "drizzle-kit"
 
 export default defineConfig({
   // スキーマファイルのディレクトリ
-  schema: "./db/schema.ts",
+  schema: "./db/index.ts",
 
   // マイグレーションファイルの出力先
   out: "./db/migrations",
