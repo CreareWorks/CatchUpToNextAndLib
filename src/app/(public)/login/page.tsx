@@ -1,10 +1,10 @@
 import { auth } from "lib/auth";
 import LoginClientActions from "./LoginClientActions";
+import { Session } from "next-auth";
 
 export default async function AuthTestPage(): Promise<JSX.Element>
 {
-  // serverComponentでsessionを取得し、clientに渡す。client側でsessionの有無によって表示を変える
-  const session = await auth();
+  const session: Session | null  = await auth()
 
-  return <LoginClientActions session={session} />;
+  return <LoginClientActions session={session} />
 }

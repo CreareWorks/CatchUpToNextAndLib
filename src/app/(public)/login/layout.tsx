@@ -4,5 +4,5 @@ export default function AuthTestLayout({ children }: { children: React.ReactNode
 {
   return (
     <section>{children}</section>
-  );
+  )
 }
