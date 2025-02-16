@@ -6,6 +6,8 @@ import { signIn, signOut } from "next-auth/react";
 import Image from "next/image";
 import { Session } from "next-auth";
 import styles from "./LoginClientActions.module.scss";
+import { startTransition, useActionState, useEffect } from "react";
+import { handleGoogleSignIn } from "./actions";
 
 type LoginClientActionsProps = {
   session: Session | null;
@@ -13,6 +15,16 @@ type LoginClientActionsProps = {
 
 export default function LoginClientActions({ session }: LoginClientActionsProps): JSX.Element 
 {
+  const [, triggerAction] = useActionState(handleGoogleSignIn, false);
+
+  useEffect(() => {
+    if (!session) {
+      startTransition(() => {
+        triggerAction();
+      })
+    }
+  }, [session, triggerAction]);
+
   // 未ログイン時
   if (!session) {
     return (

@@ -8,9 +8,22 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
         clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
         authorization: {
           params: {
-            prompt: "select_account", // 常にアカウント選択画面を表示
+            prompt: "select_account"
           },
         },
       }),
     ],
+    callbacks: {
+      async jwt({ token, account }) {
+        if (account) {
+          token.sub = account.providerAccountId;
+        }
+        return token;
+      },
+      async session({ session, token }) {
+        if (!token.sub) return session;
+        session.user.providerId = token.sub
+        return session;
+      },
+    },
   });

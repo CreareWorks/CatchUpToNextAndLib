@@ -81,20 +81,20 @@ const AddModal: ({ close }: Props) => JSX.Element = ({ close }: Props) => {
             required={true}
           />
           <div className={styles.buttonWrap}>
-          <Button
-            type="button"
-            variant="cancel"
-            onClick={close}
-          >
-            キャンセル
-          </Button>
-          <Button
-            type="submit"
-            variant="primary"
-            disabled={!form.valid || isPending}
-          >
-            OK
-          </Button>
+            <Button
+              type="button"
+              variant="cancel"
+              onClick={close}
+            >
+              キャンセル
+            </Button>
+            <Button
+              type="submit"
+              variant="primary"
+              disabled={!form.valid || isPending}
+            >
+              OK
+            </Button>
           </div>
         </form>
       </div>

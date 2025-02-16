@@ -1,6 +1,6 @@
 import { db } from "lib/db";
 import { UsersPublicSchema, UserPublicZodSchema, type CreateUserFormSchema, type UserSchema } from "./schema";
-import { users } from "db/schema";
+import { users } from "db/schemas/users";
 
 // GETの内容を書く ServerComponentを返す例
 // 下記をServerComponentを作成する関数で呼び出し、JSX.Elementをpage.tsxで渡す。
